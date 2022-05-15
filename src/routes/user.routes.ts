@@ -19,6 +19,18 @@ router.get('/',(req,res)=>{
       res.send('Internal Error! ' + err)
     })
 })
+router.post('/',async (req,res)=>{
+    type login = {
+        email:string,
+        password:string
+    }
+    let login:login = {
+        email:req.body.email,
+        password:req.body.password
+    }
+    let sql = 'SELECT * FROM users WHERE useremail=$1'
+    await client.query(sql,[])
+})
 router.post('/register',async(req,res)=>{
   let user:User = {
     id:0,

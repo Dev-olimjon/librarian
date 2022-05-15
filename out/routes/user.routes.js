@@ -31,6 +31,14 @@ router.get('/', (req, res) => {
         res.send('Internal Error! ' + err);
     });
 });
+router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let login = {
+        email: req.body.email,
+        password: req.body.password
+    };
+    let sql = 'SELECT * FROM users WHERE useremail=$1';
+    yield client_1.default.query(sql, []);
+}));
 router.post('/register', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let user = {
         id: 0,

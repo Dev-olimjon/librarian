@@ -1,61 +1,31 @@
 <script lang="ts">
-   var modal = document.getElementById("myModal");
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+   import axios from "axios"
+</script>
+<main> 
+     <form class="card" action="http://localhost:9090/"method="post">
+          <input name="useremail" type="email" placeholder="EMAIL..." class="input w-full max-w-xs" />
+          <input name="userpassword" type="password" placeholder="PASSWORD..." class="input w-full max-w-xs" />
+          <button type="submit" class="btn btn-outline btn-success">SIGN IN</button>
+     </form>
+</main>
+<style>
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #414155;
+     margin: 0;
+     padding: 0;
+}
+input{
+     width: 300px;
 }
 
-    </script>
-    <main>
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Some text in the Modal..</p>
-            </div>
-          
-          </div>
-    </main>
-    
-    <style>
-    .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.card{
+     display: flex;
+     flex-direction: column;
+     gap:25px;
+     padding: 20px;
 }
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-    </style>
+</style>
